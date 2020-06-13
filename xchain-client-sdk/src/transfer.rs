@@ -103,7 +103,6 @@ mod tests {
         assert_eq!(res.is_ok(), true);
         println!("{:?}", res.unwrap());
 
-        let res = ocall::close();
-        assert_eq!(res.ok().unwrap(), true);
+        ocall::close();
     }
 }

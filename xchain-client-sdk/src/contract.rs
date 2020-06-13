@@ -166,8 +166,7 @@ mod tests {
         assert_eq!(res.is_ok(), true);
         println!("{:?}", res.unwrap());
 
-        let res = ocall::close();
-        assert_eq!(res.ok().unwrap(), true);
+        ocall::close();
     }
 
     #[test]
@@ -196,7 +195,6 @@ mod tests {
             std::str::from_utf8(&resp.ok().unwrap().get_response().get_response()[0]).unwrap()
         );
 
-        let res = ocall::close();
-        assert_eq!(res.ok().unwrap(), true);
+        ocall::close();
     }
 }

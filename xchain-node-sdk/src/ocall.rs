@@ -20,14 +20,7 @@ pub extern "C" fn init(
 }
 
 #[no_mangle]
-pub extern "C" fn close() -> Result<bool>{
-    let ptr = CLI.load(Ordering::SeqCst);
-    if !ptr.is_null() {
-        CLI.store(0 as *mut (), Ordering::SeqCst);
-    }
-    let ptr = CLI.load(Ordering::SeqCst);
-    Ok(ptr.is_null())
-}
+pub extern "C" fn close(){}
 
 #[no_mangle]
 pub extern "C" fn ocall_xchain_endorser_call(
